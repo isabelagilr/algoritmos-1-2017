@@ -1,0 +1,46 @@
+// area triangulo2.cpp : Defines the entry point for the console application.
+//
+
+// Autor: isabela gil rodrigues
+// Fecha:15 de febrero
+
+// Declarar librerias
+#include "stdafx.h"  //Libreria del Visual C++ stdio
+#include <iostream>  // Entrada y salida cin, cout
+#include "conio.h"   //Para manejar la entrada y getch()
+
+
+// Declara el teclado y el monitor como la salida y entrada estandard
+using namespace std;
+
+// El cuerpo principal del programa
+void main()
+{
+   float area,base,altura; // Declaración de variables
+   // Ingreso de datos con mensaje y solicitud de datos
+
+		cout<<"Ingrese base: "; //equivale a printf
+		cin>>base; //equivale a scanf
+
+		 if (base<=0)
+
+			cout<<"no puede ingresar numeros negativos, intente nuevamente"; //como es una sola instruccion en if no lleva llaves
+	
+		 else   {
+				cout<<"Ingrese altura: ";
+				cin>>altura;
+				
+		 if (altura<=0)
+
+			 cout<<"no puede ingresar numeros negativos, intente nuevamente";
+		 else   {
+				// Proceso: Calculo
+			area=(base*altura)/2;
+				// Salida de la respuesta o resultado
+			cout<<"El area es: "<<area;
+				}
+				}
+		getch(); // Detiene la pantalla
+
+}
+//Finaliza el cuerpo principal
