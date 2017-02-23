@@ -1,0 +1,55 @@
+// condicionaldoble.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+
+using namespace std;
+
+void main()
+{
+	float area,base,altura,lado;
+	int option;
+	cout<<"         MENU        "<<endl;
+	cout<<" 1 calculo del area de un cuadrado"<<endl;
+	cout<<" 2 calculo del area de un triangulo"<<endl;
+	cout<<" 3 calculo del area de un rectangulo"<<endl;
+
+	cout<<"elija una opcion"<<endl;
+	cin>>option;
+
+	switch(option){
+	case 1:
+		{cout<<"ingrese el lado"<<endl;
+		cin>>lado;
+		area=powf(lado,2.0);
+		cout<<"el area es:"<<area;
+		break;}
+	case 2:
+		{cout<<"ingrese la base"<<endl;
+		cin>>base;
+		cout<<"ingrese la altura"<<endl;
+		cin>>altura;
+		area=(base*altura)/2;
+		cout<<"el area es:"<<area;
+		break;}
+
+	case 3:
+		{cout<<"ingrese la base"<<endl;
+		cin>>base;
+		cout<<"ingrese la altura"<<endl;
+		cin>>altura;
+		area=base*altura;
+		cout<<"el area es:"<<area;
+		break;}
+	case 0:
+		{cout<<"salir"<<endl;
+		break;}
+	default:
+		{cout<<"no es una opcion valida"<<endl;
+		break;}
+	}
+getch();
+}
