@@ -1,0 +1,20 @@
+// condicionalsimple.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main()
+{	int edad;
+	cout<<"indique cual es su edad"<<endl;
+	cin>>edad;
+	if(edad>=18)
+		cout<<"puede votar";
+	if(edad<=18)
+		cout<<"no puede votar";
+
+getch();
+}
