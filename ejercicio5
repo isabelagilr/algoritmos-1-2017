@@ -1,0 +1,37 @@
+// ejercicio5.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+
+using namespace std;
+
+void main()
+{
+	int dia,mes,anho;
+	cout<<"ingrese el anho"<<endl;
+	cin>>anho;
+	cout<<"ingrese el dia"<<endl;
+	cin>>dia;
+	if ((dia>0) && (dia<=31))
+		{
+		cout<<"ingrese el mes"<<endl;
+		cin>>mes;
+		if ((mes>0)&&(mes<=12))
+			{if((dia>=21)&&(mes>=9&&mes<12))
+    			cout<<"ES PRIMAVERA"<<endl;
+			if((dia>=21)&&(mes>=12&&mes<3))
+	   			cout<<"ES VERANO"<<endl;
+			if((dia>=21)&&(mes>=3&&mes<6))
+		   		cout<<"ES OTONHO"<<endl;
+			if((dia>=21)&&(mes>=6&&mes<9))
+				cout<<"ES INVIERNO"<<endl;}
+		else
+		   cout<<"el mes no esta entre 1 y 12"<<endl;
+	    }
+	else
+		cout<<"el dia no esta entre 1 y 31"<<endl;
+getch();
+}
