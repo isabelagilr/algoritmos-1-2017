@@ -1,0 +1,41 @@
+// 1ra pregunta examen parcial1.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+int riesgo(int sueldo,bool historial,bool moroso, int hipoteca);
+void main()
+{	
+	int sueldo, hipoteca,r;
+	bool historial=false, moroso=false;
+	cout<<"ingrese el sueldo"<<endl;
+	cin>>sueldo;
+	cout<<"ingrese el historial del cliente"<<endl;
+	cin>>historial;
+	if(historial==true)
+		{cout<<"ingrese si el cliente es moroso"<<endl;
+		cin>>moroso;	
+		}
+	cout<<"ingrese la hipoteca"<<endl;
+	cin>>hipoteca;
+	r=riesgo(sueldo, historial, moroso, hipoteca);
+	cout<<"el nivel de riesgo es:"<<r<<endl;
+	getch();
+}
+int riesgo(int sueldo,bool historial,bool moroso, int hipoteca)
+{
+	int r;
+	if(((historial==true)&&(moroso==true))||(hipoteca>sueldo*0.3))
+		r=1;
+	else
+		{
+		if(((historial==false)&&(hipoteca<sueldo*0.2))||((historial==true)&&(moroso==false)&&(hipoteca<sueldo*0.3)))
+			r=2;
+		else
+			r=3;
+		}
+	return(r);
+}
