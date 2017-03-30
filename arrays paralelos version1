@@ -1,4 +1,6 @@
 
+// arraysparalelos.cpp : Defines the entry point for the console application.
+//
 #include "stdafx.h"
 #include <iostream>
 #include <string>
@@ -23,7 +25,8 @@ void main()
 	cargarvectors(alumnos,n);
 	cargarvectori(notas,n);
 	burbuja(notas,alumnos,n);
-
+	mostrarvectores(notas,alumnos,n);
+	getch();
 }
 
 void cargarvectori( int notas[], int n)
@@ -56,12 +59,11 @@ void burbuja (int notas[], string alumnos[],int n)
 				notas[j]=notas[i];
 				notas[i]=notasaux;
 				//array paralelo
-				alumnosaux=notas[j];
+				alumnosaux=alumnos[j];
 				alumnos[j]=alumnos[i];
 				alumnos[i]=alumnosaux;
 
 			}
-	
 }
 void mostrarvectores (int notas[], string alumnos[], int n)
 {
