@@ -4,7 +4,24 @@
 #include "stdafx.h"
 #include <iostream>
 #include <string>
+#include "conio.h"
 using namespace std;
+
+bool palindromo (string C);
+void main()
+{string C;
+bool k=false;
+cout<<"ingrese la cadena : ";
+getline (cin , C);
+k=palindromo (C);
+if (k==true)
+	cout<<"Es Palindromo ";
+
+else 
+	cout<<"No es Palindromo" ;
+
+getch();
+}
 
 bool palindromo (string C){
 	bool k=true;
@@ -17,18 +34,3 @@ bool palindromo (string C){
 	}
 	return k;
 }
-int main()
-{string C;
-bool k=false;
-cout<<"ingrese la cadena : ";
-getline (cin , C);
-k=palindromo (C);
-if (k==true)
-	cout<<"Es Palindromo ";
-
-else 
-	cout<<"No es Palindromo" ;
-
-	return 0;
-}
-
