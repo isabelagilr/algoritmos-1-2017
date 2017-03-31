@@ -1,0 +1,83 @@
+// arraysparaleloss.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include <string>
+#include "conio.h"
+#define MAX 40
+
+using namespace std;
+void cargar_notas(int notas[],int n);
+void cargar_alumnos(string alumnos[], int n);
+void burbuja_mayor_a_menor(int notas[],string alumnos[], int n);
+void mostrar_resultado(int notas[],string alumnos[], int n);
+
+void main()
+{
+	int notas[MAX],n;
+	string alumnos[MAX];
+	do{
+		cout<<"ingresa cuantos alumnos son:"<<endl;
+		cin>>n;
+	}while((n<=0)||(n>MAX));
+	cout<<endl;
+	cout<<"NOTAS"<<endl;
+	cargar_notas(notas,n);
+	cout<<endl;
+	cout<<"ALUMNOS"<<endl;
+	cargar_alumnos(alumnos,n);
+	burbuja_mayor_a_menor(notas,alumnos,n);
+	cout<<endl;
+	cout<<"ALUMNOS""\t""\t""NOTAS"<<endl;
+	mostrar_resultado(notas,alumnos,n);
+	getch();
+}
+
+void cargar_notas(int notas[],int n)
+{	cin.ignore();
+	for(int i=0;i<n;i++)
+	{	
+		cout<<"notas["<<i<<"]=";
+		cin>>notas[i];
+
+	}
+
+}
+void cargar_alumnos(string alumnos[], int n)
+{
+	cin.ignore();
+	for(int i=0;i<n;i++)
+	{
+		cout<<"alumno["<<i<<"]=";
+		getline(cin,alumnos[i]);
+
+	}
+
+}
+void burbuja_mayor_a_menor(int notas[],string alumnos[], int n)
+{	
+	int mayornotas;
+	string mayoralumnos;
+	for(int i=0;i<n-1;i++)
+	{	for(int j=i+1;j<n;j++)
+		{
+			if(notas[j]>notas[i])
+			{
+				mayornotas=notas[j];
+				notas[j]=notas[i];
+				notas[i]=mayornotas;
+
+				mayoralumnos=alumnos[j];
+				alumnos[j]=alumnos[i];
+				alumnos[i]=mayoralumnos;
+
+			}
+		}
+	}
+}
+void mostrar_resultado(int notas[],string alumnos[], int n)
+{
+	for(int i=0;i<3;i++)
+		cout<<alumnos[i]<<"\t""\t"<<notas[i]<<endl;
+}
