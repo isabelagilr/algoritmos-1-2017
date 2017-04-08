@@ -121,7 +121,6 @@ void main()
 			}
 			case 7:
 			{
-				int n;
 				string a;
 				cin.ignore();
 				cout<<"ingrese el nombre"<<endl;
@@ -167,6 +166,7 @@ void main()
 						cout<<"la letra ("<<x<<") si existe en el nombre"<<endl;
 						cout<<"la posicion de la letra ("<<x<<") es: "<<j+1<<endl;// si pongo posletra+1 si funciona pero cuando hay mas de una vez esa letra solo cuenta la primera
 					}
+
 				}
 				
 				break;
@@ -191,7 +191,7 @@ void main()
 				}
 				cout<<endl;
 				if(var2.compare(nombre)==0)
-					cout<<"es palindromo"<<endl;
+					cout<<"ES palindromo"<<endl;
 				else
 					cout<<"NO es palindromo"<<endl;
 				cout<<endl;
@@ -199,23 +199,27 @@ void main()
 			}
 			case 11:
 			{
-				int i,cont;
-				cont=0;
+				int i,contcons,contvoc;
+				contcons=0;
+				contvoc=0;
 				cin.ignore();
 				cout<<"ingrese el nombre"<<endl;
 				getline(cin,nombre);
 				longitud=nombre.length();
+				var2=nombre;
 				for(i=0;i<longitud;i++)
 				{
 					if((nombre[i]!='a')&&(nombre[i]!='e')&&(nombre[i]!='i')&&(nombre[i]!='o')&&(nombre[i]!='u'))
-						{var2[cont]=nombre[i];
-						cont++;
+						{var2[contcons]=nombre[i];
+						contcons++;
 						}
+					else 
+						contvoc++;
 				}
 				cout<<"sin vocales es:";
-					for(i=0;i<longitud-cont;i++)
+					for(i=0;i<longitud-contvoc;i++)
 					{
-						cout<<var2[cont];
+						cout<<var2[i];
 					}
 				break;
 			}
