@@ -1,0 +1,71 @@
+// arrays paralelos.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include <string>
+#define MAX 20
+
+using namespace std;
+
+void cargar_nombre_notas(string nombre[], int notas[], int n);
+void burbuja_desendente(string nombre[],int notas[],int n);
+void mostrar_vectores(string nombre[], int notas[], int n);
+ 
+void main()
+{
+	string nombre[MAX];
+	int notas[MAX],n;
+	do{cout<<"ingrese cuantos alumnos hay en la clase"<<endl;
+	cin>>n;
+	}while((n<=0)||(n>MAX));
+	cargar_nombre_notas(nombre,notas,n);
+	burbuja_desendente(nombre,notas,n);
+	mostrar_vectores(nombre,notas,n);
+	getch();
+}
+
+void cargar_nombre_notas(string nombre[], int notas[], int n)
+{	
+	for(int i=0;i<n;i++)
+	{	
+		cin.ignore();
+		cout<<"ingrese nombre ("<<i+1<<")"<<endl;
+		getline(cin,nombre[i]);
+		cout<<"ingrese la nota"<<endl;
+		cin>>notas[i];
+	}
+}
+
+void burbuja_desendente(string nombre[],int notas[],int n)
+{
+	int i,j,aux;
+	string aux1;
+	aux=notas[0];
+	aux1=nombre[0];
+	for(i=0;i<n-1;i++)
+	{	for(j=i+1;j<n;j++)
+		{
+			if(notas[j]>notas[i])
+			{	aux=notas[i];
+				notas[i]=notas[j];
+				notas[j]=aux;
+
+				aux1=nombre[i];
+				nombre[i]=nombre[j];
+				nombre[j]=aux1;
+			}
+		}
+	}
+}
+
+void mostrar_vectores(string nombre[], int notas[], int n)
+{
+	int i;
+	cout<<"ALUMNOS         NOTAS"<<endl;
+	for(i=0;i<3;i++)
+	{
+		cout<<nombre[i]<<"\t""\t"<<notas[i]<<endl;
+	}
+}
